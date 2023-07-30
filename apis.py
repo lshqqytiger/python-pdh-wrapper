@@ -7,13 +7,13 @@ from .defines import *
 
 pdh = CDLL("pdh.dll")
 
-PdhOpenQueryA: Callable = pdh.PdhOpenQueryA
-PdhOpenQueryA.restype = PDH_FUNCTION
-PdhOpenQueryA.argtypes = [LPCSTR, DWORD_PTR, POINTER(PDH_HQUERY)]
+PdhOpenQueryW: Callable = pdh.PdhOpenQueryW
+PdhOpenQueryW.restype = PDH_FUNCTION
+PdhOpenQueryW.argtypes = [LPCWSTR, DWORD_PTR, POINTER(PDH_HQUERY)]
 
-PdhAddEnglishCounterA: Callable = pdh.PdhAddCounterA
-PdhAddEnglishCounterA.restype = PDH_FUNCTION
-PdhAddEnglishCounterA.argtypes = [PDH_HQUERY, LPCSTR, DWORD_PTR, POINTER(PDH_HCOUNTER)]
+PdhAddEnglishCounterW: Callable = pdh.PdhAddEnglishCounterW
+PdhAddEnglishCounterW.restype = PDH_FUNCTION
+PdhAddEnglishCounterW.argtypes = [PDH_HQUERY, LPCWSTR, DWORD_PTR, POINTER(PDH_HCOUNTER)]
 
 PdhCollectQueryData: Callable = pdh.PdhCollectQueryData
 PdhCollectQueryData.restype = PDH_FUNCTION
@@ -23,9 +23,9 @@ PdhGetFormattedCounterValue: Callable = pdh.PdhGetFormattedCounterValue
 PdhGetFormattedCounterValue.restype = PDH_FUNCTION
 PdhGetFormattedCounterValue.argtypes = [PDH_HCOUNTER, DWORD, LPDWORD, PPDH_FMT_COUNTERVALUE]
 
-PdhGetFormattedCounterArrayA: Callable = pdh.PdhGetFormattedCounterArrayA
-PdhGetFormattedCounterArrayA.restype = PDH_FUNCTION
-PdhGetFormattedCounterArrayA.argtypes = [PDH_HCOUNTER, DWORD, LPDWORD, LPDWORD, PPDH_FMT_COUNTERVALUE_ITEM_A]
+PdhGetFormattedCounterArrayW: Callable = pdh.PdhGetFormattedCounterArrayW
+PdhGetFormattedCounterArrayW.restype = PDH_FUNCTION
+PdhGetFormattedCounterArrayW.argtypes = [PDH_HCOUNTER, DWORD, LPDWORD, LPDWORD, PPDH_FMT_COUNTERVALUE_ITEM_W]
 
 PdhCloseQuery: Callable = pdh.PdhCloseQuery
 PdhCloseQuery.restype = PDH_FUNCTION
