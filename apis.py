@@ -7,6 +7,10 @@ from .defines import *
 
 pdh = CDLL("pdh.dll")
 
+PdhExpandWildCardPathW: Callable = pdh.PdhExpandWildCardPathW
+PdhExpandWildCardPathW.restype = PDH_FUNCTION
+PdhExpandWildCardPathW.argtypes = [LPCWSTR, LPCWSTR, PZZWSTR, LPDWORD, DWORD]
+
 PdhOpenQueryW: Callable = pdh.PdhOpenQueryW
 PdhOpenQueryW.restype = PDH_FUNCTION
 PdhOpenQueryW.argtypes = [LPCWSTR, DWORD_PTR, POINTER(PDH_HQUERY)]

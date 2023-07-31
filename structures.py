@@ -15,7 +15,7 @@ class PDH_FMT_COUNTERVALUE_U(Union):
 
     longValue: int
     doubleValue: float
-    largeValue: c_longlong
+    largeValue: int
     AnsiStringValue: LPCSTR
     WideStringValue: LPCWSTR
 
